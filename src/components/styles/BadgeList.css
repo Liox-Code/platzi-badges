@@ -1,0 +1,31 @@
+.badge-list li{
+    margin-bottom: 10px;
+}
+
+.Badge-item{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.Badge-item__image{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin-right: 20px;
+}
+
+.Badge-item__container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 100%;
+    height: 80px;
+}
+
+.Badge-item__container p{
+    margin: 0;
+    display: flex;
+}
