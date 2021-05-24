@@ -13,7 +13,7 @@ import api from '../api';
 class BadgeNew extends React.Component{
     state = {
         form: {
-            loading: false,
+            loading: true,
             error: null,
             firstName: '',
             lastName: '',
@@ -22,6 +22,24 @@ class BadgeNew extends React.Component{
             twitter: '',
         }
     };
+
+    componentDidMount() {
+        this.fetchData();
+    }
+
+    fetchData = async e => {
+        this.setState({ loading: true, error: null});
+
+        try {
+            const data = await api.badges.read(
+                this.props.match.params.badgeId
+            );
+            
+            this.setState({ loading: false, form: data});
+        } catch (error) {
+            this.setState({ loading: false, error: error});
+        }
+    }
 
     handleChange = e => {
         // const nextForm = this.state.form
@@ -44,7 +62,7 @@ class BadgeNew extends React.Component{
         this.setState({ loading: true, error: null });
 
         try{
-            await api.badges.create(this.state.form);
+            await api.badges.update(this.props.match.params.badgeId, this.state.form);
             this.setState({ loading: false });
             //console.log('creado');
             this.props.history.push('/badges');
@@ -77,7 +95,7 @@ class BadgeNew extends React.Component{
                             />
                         </div>
                         <div className="col-6">
-                            <h1>New Attendant</h1>
+                            <h1>Edit Attendant</h1>
                             <BadgeForm 
                                 cambio = {this.handleChange}
                                 enviarSubmit = {this.handleSubmit}
