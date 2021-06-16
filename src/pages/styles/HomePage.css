@@ -1,0 +1,48 @@
+.HomePage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-content: center;
+    width: 100vw;
+    height: 90vh;
+    background: url('../../images/stars.svg'), #1B1B25;
+}
+
+.HomePage > img{
+    max-width: 650px;
+}
+
+.HomePage-Left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 300px;
+    color: #FFFFFF;
+}
+
+.HomePage-Left > img{
+    margin-bottom: 12px;
+}
+
+.HomePage-Left > h1{
+    margin-bottom: 12px;
+    font-size: 3rem;
+}
+
+.HomePage-Left > p{
+    margin-bottom: 12px;
+    text-align: justify;
+    font-size: 1.8rem;
+}
+
+.HomePage-Left > .HomePage-Btn{
+    align-self: flex-end;
+    padding: 4px 0;
+    width: 200px;
+    background-color: #98CA3F;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    text-align: center;
+    text-decoration: none;
+}

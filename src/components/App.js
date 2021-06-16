@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
+import HomePage from '../pages/HomePage';
 import BadgeNew from '../pages/BadgeNew';
 import BadgeEdit from '../pages/BadgeEdit';
 import BadgeDetail from '../pages/BadgeDetail';
@@ -13,6 +14,7 @@ function App() {
         <BrowserRouter>
             <Layout>
                 <Switch>
+                    <Route exact path='/' component={HomePage}/>
                     <Route exact path='/badges' component={Badges}/>
                     <Route exact path='/badges/new' component={BadgeNew}/>
                     <Route exact path='/badges/:badgeId/' component={BadgeDetail}/>
