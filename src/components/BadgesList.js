@@ -29,7 +29,7 @@ class BadgeList extends React.Component{
                                     <Gravatar className='Badge-item__image' email={badge.email} alt=""/>
                                     <div className="Badge-item__container">
                                         <p>{badge.firstName} {badge.lastName}</p>
-                                        <p><a href="">@{badge.twitter}</a></p>
+                                        <p>@{badge.twitter}</p>
                                         <p>{badge.jobTitle}</p>
                                     </div>
                                 </div>
